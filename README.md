@@ -11,10 +11,12 @@ A hand-authored HTML/CSS/JavaScript port of https://www.smart-lead.org.ua/, insp
 
 ## Development and deployment
 
-Run `npm install`, then `npm run dev`. `npm run build` compiles the frontend and packages a Cloudflare-compatible Worker at `dist/server/index.js`. This is a source backup of the currently published site; it does not deploy to GitHub Pages. A separate Cloudflare Pages integration will be needed before this repository can host the site independently.
+Run `npm install`, then `npm run dev`. `npm run build` produces the static site in `dist/client`. The contact endpoint is a Cloudflare Pages Function in `functions/api/contact.js`.
+
+To publish from GitHub, create a Cloudflare Pages project connected to this repository (`dimamarktarg/smart-lead`), with production branch `main`, build command `npm run build`, and output directory `dist/client`. Cloudflare Pages will deploy future commits to `main` automatically. Configure `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` as runtime secrets in the Pages project before testing the contact forms.
 
 ## Contact delivery
 
 Forms 4, 7, 8 and 9 keep their original labels and now send the name, phone, form label and Kyiv time directly to the configured Telegram group. The bot token is a production secret and is never stored in the source tree. A real lead was not submitted during QA, so delivery should be verified with one controlled test after deployment.
 
-The published copy does not load the original site's tracking plugins or advertising pixels. The Telegram bot token and chat ID must be configured as runtime secrets on the hosting platform. They are not included in this repository.
+The published copy does not load the original site's tracking plugins or advertising pixels. The Telegram bot token and chat ID are not included in this repository.
