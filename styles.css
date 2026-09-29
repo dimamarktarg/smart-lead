@@ -79,3 +79,16 @@ footer{padding-top:38px;padding-bottom:30px}
  .audience{margin-bottom:0}
  .audience-grid article:last-child{border-bottom:0}
 }
+
+/* Analytics consent is optional and can be changed from either page. */
+.cookie-actions{display:flex;flex-wrap:wrap;gap:8px}
+.cookie-actions [data-cookie-decline]{background:transparent;border:1px solid #aaa}
+.cookie-settings{display:block;margin-top:12px;padding:0;border:0;background:none;color:#ef4444;text-decoration:underline;font-size:12px;text-align:left}
+.privacy-page>.cookie-settings{margin:12px 0 24px}
+#analytics-privacy{font-size:clamp(22px,3vw,36px);margin:32px 0 16px}
+@media(max-width:767px){
+ .cookie-banner{align-items:stretch;flex-direction:column;padding:12px}
+ .cookie-banner p{font-size:12px}
+ .cookie-actions{width:100%}
+ .cookie-actions button{flex:1;white-space:normal}
+}
