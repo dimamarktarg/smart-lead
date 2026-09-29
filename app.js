@@ -1,3 +1,5 @@
+import { trackEvent } from './analytics.js';
+
 // Load embedded players only when they approach the visible part of the page.
 const videoObserver=new IntersectionObserver(entries=>{
  for(const {target,isIntersecting} of entries){
@@ -85,7 +87,7 @@ document.querySelectorAll('.accordion-toggle').forEach(button=>{
 });
 
 const contactDialog=document.querySelector('.contact-dialog');
-document.querySelectorAll('[data-open-contact]').forEach(button=>button.addEventListener('click',()=>contactDialog.showModal()));
+document.querySelectorAll('[data-open-contact]').forEach(button=>button.addEventListener('click',()=>{contactDialog.showModal();trackEvent('view_contact_form',{form_name:'consultation'});}));
 document.querySelectorAll('dialog').forEach(dialog=>{
  dialog.querySelector('[data-close-dialog]').addEventListener('click',()=>dialog.close());
  dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close()}});
@@ -117,11 +119,12 @@ lightbox.querySelector('.lightbox-prev').addEventListener('click',()=>showResult
 lightbox.querySelector('.lightbox-next').addEventListener('click',()=>showResult(resultIndex+1));
 lightbox.addEventListener('keydown',event=>{if(event.key==='ArrowRight')showResult(resultIndex+1);if(event.key==='ArrowLeft')showResult(resultIndex-1)});
 
-const cookieBanner=document.querySelector('.cookie-banner');
-try{cookieBanner.hidden=localStorage.getItem('smartlead-cookie-consent')==='accepted'}catch{}
-document.querySelector('[data-cookie-accept]').addEventListener('click',()=>{cookieBanner.hidden=true;try{localStorage.setItem('smartlead-cookie-consent','accepted')}catch{}});
-
-document.querySelectorAll('[data-contact-form]').forEach(form=>form.addEventListener('submit',async event=>{
+const formNames={4:'consultation',7:'ad_audit',8:'ad_strategy',9:'callback'};
+document.querySelectorAll('[data-contact-form]').forEach(form=>{
+ const formId=form.querySelector('[name=formId]')?.value;
+ const formName=formNames[formId];
+ form.addEventListener('focusin',()=>trackEvent('form_start',{form_id:formId,form_name:formName}),{once:true});
+ form.addEventListener('submit',async event=>{
  event.preventDefault();if(!form.reportValidity())return;
  const status=form.querySelector('.form-status'),button=form.querySelector('button[type=submit]');
  status.hidden=false;status.textContent='Надсилаємо заявку…';button.disabled=true;
@@ -130,5 +133,7 @@ document.querySelectorAll('[data-contact-form]').forEach(form=>form.addEventList
   const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
   const result=await response.json();if(!response.ok||!result.success)throw new Error('submit');
   status.textContent='Дякуємо! Вашу заявку надіслано. Ми зв’яжемося з вами.';form.reset();
- }catch{status.replaceChildren(document.createTextNode('Не вдалося надіслати заявку. Зв’яжіться з нами: '));const link=document.createElement('a');link.href='https://t.me/smart_lead_01';link.textContent='Написати в Telegram';status.append(link)}finally{button.disabled=false}
-}));
+  trackEvent('generate_lead',{form_id:formId,form_name:formName});
+ }catch{trackEvent('form_submit_error',{form_id:formId,form_name:formName});status.replaceChildren(document.createTextNode('Не вдалося надіслати заявку. Зв’яжіться з нами: '));const link=document.createElement('a');link.href='https://t.me/smart_lead_01';link.textContent='Написати в Telegram';status.append(link)}finally{button.disabled=false}
+ });
+});
