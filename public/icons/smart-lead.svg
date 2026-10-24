@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Smart Lead</title>
+  <rect width="512" height="512" fill="#b60001"/>
+  <!-- The white target mark from the Smart Lead logo, redrawn as a vector. -->
+  <g fill="none" stroke="#fff" stroke-width="8">
+    <circle cx="256" cy="256" r="158"/>
+    <circle cx="256" cy="256" r="112"/>
+    <circle cx="256" cy="256" r="58"/>
+    <path d="M256 78v49m0 258v49M78 256h49m258 0h49M256 174v38m0 88v38M174 256h38m88 0h38"/>
+  </g>
+</svg>
