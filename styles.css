@@ -71,7 +71,7 @@ footer{padding-top:38px;padding-bottom:30px}
 
 /* Defer rendering of heavy sections until they approach the viewport. */
 .services,.video-section,.benefits,.stages,.audience,.partners,.extras,footer{content-visibility:auto;contain-intrinsic-size:auto 900px}
-@media(max-width:767px){.hero-char{opacity:.45;transform:translateY(6px);animation-duration:.7s}@keyframes hero-char-in{from{opacity:.45;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}}
+@media(max-width:767px) and (prefers-reduced-motion:no-preference){.hero-char{opacity:0;transform:translateY(6px);animation-duration:.7s}@keyframes hero-char-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}}
 
 /* Mobile audience-to-slogan spacing: keep the banner padding visible and
    omit only the final separator where it meets the red slogan banner. */
