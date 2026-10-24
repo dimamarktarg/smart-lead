@@ -7,3 +7,4 @@
 2026-10-10 | GitHub | Установлен ChatGPT Codex Connector на аккаунт владельца, исправлен 403 записи; доступ ко всем его репозиториям | Создание ветки через connector успешно; диагностическая ветка удалена
 2026-10-24 | Память проекта | Созданы AGENTS, PROJECT_STATE, CURRENT_TASK и WORK_LOG в основном checkout | Карта сверена с кодом; main совпадала с origin/main; тексты проверены на отсутствие чувствительных данных
 2026-10-24 | Установка приложения | Добавлены manifest, SVG/PNG мишень, Apple icon и head metadata; установка только через меню браузера, без новых кнопок/баннеров | Build OK; Cloudflare 5ba3f54 success; Chrome production manifest/installability errors=[]; body, JS и CSS без изменений
+2026-10-24 | Футер | Центрирована кнопка настроек cookie отдельным CSS-правилом футера | Build OK; Chrome 390px и desktop: центр совпадает, логика consent не менялась

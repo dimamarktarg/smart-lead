@@ -84,6 +84,7 @@ footer{padding-top:38px;padding-bottom:30px}
 .cookie-actions{display:flex;flex-wrap:wrap;gap:8px}
 .cookie-actions [data-cookie-decline]{background:transparent;border:1px solid #aaa}
 .cookie-settings{display:block;margin-top:12px;padding:0;border:0;background:none;color:#ef4444;text-decoration:underline;font-size:12px;text-align:left}
+.footer-contacts>.cookie-settings{margin-inline:auto;text-align:center}
 .privacy-page>.cookie-settings{margin:12px 0 24px}
 #analytics-privacy{font-size:clamp(22px,3vw,36px);margin:32px 0 16px}
 @media(max-width:767px){
