@@ -9,3 +9,4 @@
 2026-10-24 | Установка приложения | Добавлены manifest, SVG/PNG мишень, Apple icon и head metadata; установка только через меню браузера, без новых кнопок/баннеров | Build OK; Cloudflare 5ba3f54 success; Chrome production manifest/installability errors=[]; body, JS и CSS без изменений
 2026-10-24 | Футер | Центрирована кнопка настроек cookie отдельным CSS-правилом футера | Build OK; Chrome 390px и desktop: центр совпадает, логика consent не менялась
 2026-10-24 | Hero-анимация | Убрана серая подложка будущих букв на телефоне: начальная opacity 0; сохранён reduced-motion | Build OK; Chrome 390px: opacity 0 → .872893 → 1, размеры сохранены; HTML/JS без изменений
+2026-10-25 | Индексация | Проверены production/Git/CF/PWA и точный ресурс GSC: главная уже в индексе, блокировок нет; повторно отправлен Sitemap со старой ошибкой | HTTP200, Googlebot HTML совпадает; CF success; Google live XML доступен; отправка подтверждена, обработка пока «Не получено»; код не меняли
