@@ -1,0 +1,111 @@
+{
+  "checkedAt": "2026-10-25T14:20:49.546Z",
+  "dns": "Google public DoH A records, fresh lookup; HTTPS certificate validation enabled",
+  "addresses": {
+    "smart-lead.org.ua": "188.114.97.1",
+    "www.smart-lead.org.ua": "188.114.96.0"
+  },
+  "results": [
+    {
+      "url": "http://smart-lead.org.ua/",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/",
+      "server": "cloudflare",
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "https://smart-lead.org.ua/",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/",
+      "server": "cloudflare",
+      "tlsVerified": true,
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "http://www.smart-lead.org.ua/",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/",
+      "server": "cloudflare",
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "https://www.smart-lead.org.ua/",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/",
+      "server": "cloudflare",
+      "tlsVerified": true,
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "https://smart-lead.org.ua/privacy-policy",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/privacy-policy/",
+      "server": "cloudflare",
+      "tlsVerified": true,
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "http://www.smart-lead.org.ua/privacy-policy/",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/privacy-policy/",
+      "server": "cloudflare",
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "https://www.smart-lead.org.ua/index.php?utm_source=migration-check",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/?utm_source=migration-check",
+      "server": "cloudflare",
+      "tlsVerified": true,
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "https://smart-lead.org.ua/?utm_source=migration-check&utm_medium=verification",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/?utm_source=migration-check&utm_medium=verification",
+      "server": "cloudflare",
+      "tlsVerified": true,
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "https://www.smart-lead.org.ua/robots.txt",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/robots.txt",
+      "server": "cloudflare",
+      "tlsVerified": true,
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "https://smart-lead.org.ua/sitemap_index.xml",
+      "status": 301,
+      "location": "https://smart-lead.pages.dev/sitemap.xml",
+      "server": "cloudflare",
+      "tlsVerified": true,
+      "finalStatus": 200,
+      "finalLocation": null
+    },
+    {
+      "url": "https://smart-lead.org.ua/wp-admin/",
+      "status": 503,
+      "location": null,
+      "server": "cloudflare",
+      "tlsVerified": true
+    },
+    {
+      "url": "https://smart-lead.org.ua/?s=test",
+      "status": 503,
+      "location": null,
+      "server": "cloudflare",
+      "tlsVerified": true
+    }
+  ]
+}
