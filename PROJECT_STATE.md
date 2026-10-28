@@ -42,7 +42,7 @@
 - Всплывающая форма адаптирована под тёмный сайт: светло-серый фон, красная кнопка, закруглённые углы, читаемый текст.
 - Не передавать имя/телефон посетителей в GA, не выводить секреты в логи/документацию, не отправлять реальные заявки ради неоговорённой проверки.
 - Canonical обеих страниц, OG/Twitter metadata, uk_UA, robots и sitemap опубликованы. Sitemap содержит главную и политику.
-- Название сайта: WebSite JSON-LD в head главной — name Smart Lead, url https://smart-lead.pages.dev/, alternateName только SmartLead (строка); домен из альтернатив удалён28.10.2026; og:site_name Smart Lead. Название в выдаче выбирает Google, мгновенное обновление не гарантируется.
+- Название сайта: WebSite JSON-LD в head главной — name Smart Lead, url https://smart-lead.pages.dev/, alternateName полностью удалён28.10.2026 по уточнению пользователя; оставлено только name Smart Lead; og:site_name Smart Lead. Название в выдаче выбирает Google, мгновенное обновление не гарантируется.
 - Favicon для поиска: /favicon.png, PNG96×96, простая белая мишень с двумя толстыми кольцами на красном фоне; исходник public/favicon.svg. Подключён в head обеих страниц. PWA-иконки public/icons/ сохранены отдельно без изменений. Старый favicon JPEG32×32 больше не подключён; поисковый кэш может обновляться позже.
 - Добавлена установка Smart Lead через встроенное меню браузера: manifest с display standalone, PNG 192/512 (включая maskable), Apple touch icon 180. Иконка — векторная белая мишень из логотипа на фирменном красном фоне. По прямому уточнению пользователя не добавлять на сайт кнопки/баннеры установки. Service worker и офлайн-кэш не используются; для работы нужен интернет.
 
@@ -57,3 +57,5 @@
 - Отдельных активных задач по коду сейчас нет. Задачу и её контрольные точки вести в `CURRENT_TASK.md`.
 
 - 2026-10-28: main22bf15b, Pages production1e349235-3742-4276-96ab-a919df21e65a success. Production HTML200/WebSite Smart Lead, alternateName SmartLead, og:site_name Smart Lead, favicon PNG96x96 HTTP200. GSC live успешен и HTML содержит новую разметку; Request indexing отклонён («Квота превышена», повторить завтра). Sitemap повторно отправлен с подтверждением, дата28.10.2026, одна запись, обработка всё ещё «Не получено». Не считать выдачу Google обновлённой. Подробности CURRENT_TASK.md.
+
+- Финальное уточнение28.10.2026: main d5604ae, Pages e0fa4ad5-c258-45c4-a362-1d4988ca4b7a success. alternateName удалён целиком; production200, name/og:site_name Smart Lead, favicon96x96 HTTP200. Google live03:51 получил HTML без alternateName; повторный Request indexing снова отклонён дневной квотой. Sitemap уже повторно отправлен сегодня, лишних отправок/изменений XML не делали. Обновление выдачи не подтверждено.
